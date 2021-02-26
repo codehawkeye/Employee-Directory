@@ -16,7 +16,7 @@ function DataBody({ users }) {
         <tbody>
             {users[0] !== undefined && users[0].name !== undefined}
              user.map(({ login, name, picture, phone, email, }))
-             return ( 
+             return (
             <tr key={ligin.uuid}>
                 <td data-th="Image" className="align-middle">
                     <img
@@ -38,10 +38,16 @@ function DataBody({ users }) {
                 </td>
                 <td data-th="DOB" className="align-middle">
                     {formatDate(dob.date)}
-                </td>    
-            </tr>
-            
-         );
-      </tbody>  
-    )
+                </td>
+             </tr>
+            );
+          })
+        )   :  (
+            <></>
+        )}
+      </tbody>
+    );
 }
+
+
+export default DataBody;
