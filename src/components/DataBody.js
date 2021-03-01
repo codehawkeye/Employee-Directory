@@ -1,12 +1,14 @@
 import React from "react";
-import "../styles/DataBody.css";
+
 
 function DataBody({ users }) {
-    function formDate(date) {
-        const dataArray = date.split("_");
+    function formatDate(date) {
+        console.log( date)
+        const dataArray = date.split("-");
+        console.log(dataArray)
         const year = dataArray[0];
         const month = dataArray[1]
-        const dayArray = dayArray[2].split("T");
+        const dayArray = dataArray[2].split("T");
         const day = dayArray[0];
         const formattedDate = [month, day, year].join("_");
         return formattedDate;
@@ -14,10 +16,10 @@ function DataBody({ users }) {
 
     return (
         <tbody>
-            {users[0] !== undefined && users[0].name !== undefined}
-             user.map(({ login, name, picture, phone, email, }))
+            {users[0] !== undefined && users[0].name !== undefined ?(
+             users.map(({ login, name, picture, phone, email, dob}) => {
              return (
-            <tr key={ligin.uuid}>
+            <tr key={login.uid}>
                 <td data-th="Image" className="align-middle">
                     <img
                         src={picture.medium}

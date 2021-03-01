@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import DataTable from "./DataTable";
 import Nav from "./Nav";
 import API from "../utils/API";
-import "../styles/DataArea.css";
+// import "../styles/DataArea.css";
 
 export default class DataArea extends Component {
 
@@ -37,7 +37,7 @@ export default class DataArea extends Component {
             if (this.state.order === "ascend") {
                 //  account for missing values
                 if (a[heading] === undefined) {
-                    return -1;
+                    return 1;
                 } else if (b[heading] === undefined) {
                     return -1;
                 }
@@ -83,7 +83,7 @@ export default class DataArea extends Component {
             <Nav handleSearchChange={this.handleSearchChange}/>
             <div className="data-area">
                 <DataTable
-                    headings={this.heading}
+                    headings={this.headings}
                     users={this.state.filteredUsers}
                     handleSort={this.handleSort}
                 />
