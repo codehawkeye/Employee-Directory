@@ -19,7 +19,8 @@ function DataBody({ users }) {
             {users[0] !== undefined && users[0].name !== undefined ?(
              users.map(({ login, name, picture, phone, email, dob}) => {
              return (
-            <tr key={login.uid}>
+            <tr key={login.id}>
+                
                 <td data-th="Image" className="align-middle">
                     <img
                         src={picture.medium}
@@ -41,7 +42,7 @@ function DataBody({ users }) {
                 <td data-th="DOB" className="align-middle">
                     {formatDate(dob.date)}
                 </td>
-             </tr>
+            </tr>
             );
           })
         )   :  (

@@ -22,7 +22,7 @@ export default class DataArea extends Component {
     ]
 
 // set order of State in heading
-    HandleSort = heading => {
+    handleSort = heading => {
         if (this.state.order === "descend") {
             this.setState({
                order: "ascend"
@@ -33,7 +33,7 @@ export default class DataArea extends Component {
             })
         }
 
-        const conpareFnc = (a, b) => {
+        const compareFnc = (a, b) => {
             if (this.state.order === "ascend") {
                 //  account for missing values
                 if (a[heading] === undefined) {
@@ -51,7 +51,7 @@ export default class DataArea extends Component {
 
             }
         }
-        const sortedUsers = this.state.filteredUsers.sort(this.componentDidMount);
+        const sortedUsers = this.state.filteredUsers.sort(compareFnc);
         this.setState({ filteredUsers: sortedUsers });
     }
 
