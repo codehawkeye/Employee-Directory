@@ -1,6 +1,6 @@
-import Wrapper from "./components/Wrapper";
-import Header from "./components/Header";
-import Main from "./components/Main";
+import Wrapper from "./Wrapper";
+import Header from "./Header";
+import Main from "./Main";
 
 import './App.css';
 
